@@ -1,7 +1,7 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159.29 197.78">
 	<defs>
-		<style>.cls-1,.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:10px;}.cls-2{stroke-width:9px;}</style>
+		<style>.cls-1,.cls-2{box-shadow: 0 0 7px #00fff8;fill:none;stroke:#fff;stroke-miterlimit:10;}.cls-1{stroke-linecap:round;stroke-width:10px;}.cls-2{stroke-width:9px;}</style>
 	</defs>
 	<g id="Layer_2" data-name="Layer 2">
 		<g id="Layer_1-2" data-name="Layer 1">
