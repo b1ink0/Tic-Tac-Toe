@@ -1,0 +1,361 @@
+@mixin flex
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+@mixin borderRight
+{
+    border-right: 3px solid rgb(255, 255, 255);
+}
+@mixin borderLeft 
+{
+    border-left: 3px solid rgb(255, 255, 255);
+}
+@mixin borderBottom
+{
+    border-bottom: 3px solid rgb(255, 255, 255); 
+}
+@mixin borderTop
+{
+    border-top: 3px solid rgb(255, 255, 255); 
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, .block
+{
+    @include flex;
+    justify-content: flex-start;
+    font-family: 'Cabin', sans-serif;
+    width: 100%;
+    flex-direction: column;
+    background: #1f272e;
+    -webkit-tap-highlight-color: transparent;
+
+}
+.block {
+    margin-top: 0%;
+}
+.block div 
+{
+    @include flex;
+    // width: 100%;
+}
+.btn, #resetBtn ,#aI ,.reset
+{
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 70px;
+    border: 10px solid rgba(255, 255, 255, 0);
+    user-select: none;
+}
+#btnCon
+{
+    @include flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#title
+{
+    @include flex;
+    color: white;
+    font-size: 70px;
+    margin-bottom: 30px;
+    user-select: none;
+    h3 
+    {
+        text-align: center;
+        font-size: 69px;
+        margin-left: 40px;
+    }
+}
+#root
+{
+    width: 100%;
+}
+.App
+{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+#front
+{
+    @include flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+    z-index: 1;
+}
+#title1 
+{
+    width: 80%;
+}
+#resetBtn ,#aI, .reset
+{
+    border: 5px solid white !important; 
+    box-shadow: 0 0 7px #00fff8;
+    border-radius: 30px;
+    margin: 20px;
+}
+.reset
+{
+   
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+   
+}
+.blur
+{
+    animation: blur 0.2s ease forwards;
+}
+@keyframes blur {
+    0%{ backdrop-filter: blur(0px); opacity: 0;}
+    100%{ backdrop-filter: blur(10px); opacity: 1;}
+}
+
+#resetBtn
+{
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+#frontPage 
+{
+    @include flex;
+    opacity: 1;
+    transition: all 0.3s;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    backdrop-filter: blur(10px);
+    h1 
+    {
+        font-size: 45px;
+        user-select: none;
+    }
+    div
+    {
+        @include flex;
+        width: 260px;
+        height: 55px;
+        border: 5px white solid;
+        box-shadow: 0 0 7px #00fff8;
+        margin-top: 30px;
+        border-radius: 50px;
+        background: #1f272e;
+        cursor: pointer;
+        h1 {
+            font-size: 30px;
+            user-select: none;
+        }
+    }
+}
+#aiScore, #notAiScore
+{
+    display: none
+}
+#playerScore, #botScore, #xScore, #oScore
+{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+svg
+{
+    overflow: visible;
+}
+g
+{
+    transform: scale(0.4) translate(-72px, -97px);
+    
+}
+circle
+{
+    stroke: cyan;
+}
+
+.gO
+{
+    stroke-dasharray: 712;
+    stroke-dashoffset: 712;
+}
+.O 
+{
+    animation: O 0.5s linear forwards;
+}
+@keyframes O {
+    0% {
+        stroke-dashoffset: 712;
+    }
+    100% {
+        stroke-dashoffset: 500;
+    }
+}
+.gX
+{
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+}
+.X1 { 
+    animation: X 0.25s linear forwards;
+}
+.X2 {
+    animation: X1 0.5s linear forwards; 
+}
+@keyframes X {
+    0% {
+        stroke-dashoffset: 220;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes X1 {
+    0% {
+        stroke-dashoffset: 220;
+    }
+    50% {
+        stroke-dashoffset: 220;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+.xAndO
+{
+    display: none;
+    line
+    {
+        stroke: #ff0057;
+    }
+}
+.displayOX
+{
+    display: block !important;
+}
+img
+{
+    outline: none;
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+    user-select: none;
+}
+span
+{
+    cursor: pointer;
+    user-select: none;
+}
+// grid
+
+// vertical
+#btn1, #btn4, #btn7 
+{
+    @include borderRight;
+}
+#btn2, #btn5, #btn8
+{
+    @include borderRight;
+    @include borderLeft;
+} 
+#btn3, #btn6, #btn9
+{
+    @include borderLeft;
+}
+//horizontal
+#btn1, #btn2, #btn3 
+{
+    @include borderBottom;
+}
+#btn4, #btn5, #btn6
+{
+    @include borderBottom;
+    @include borderTop;
+} 
+#btn7, #btn8, #btn9
+{
+    @include borderTop;
+}
+
+#lines
+{
+    position: absolute;
+    div
+    {
+        position: absolute;
+    }
+}
+.lineMain, .lineBlur
+{
+    position: absolute;
+    width: 0px;
+    height: 20px;
+    background: #deff2c;
+    border-radius: 50px;
+    transform: translate(-150px, 0px);
+}
+.lineBlur
+{
+    filter: blur(10px);
+}
+.svgWin
+{
+    animation: lineChange 0.6s linear forwards;
+}
+@keyframes lineChange {
+    0%{ width: 0px; transform: translate(-150px, 0px); }
+    100%{ width: 300px; transform: translate(0px, 0px); }
+}
+#line2
+{
+    transform: translate(0px, -96px);
+}
+#line3
+{
+    transform: translate(0px, 96px);
+}
+#line4
+{
+    transform: translate(0px, 0px) rotate(90deg);
+}
+#line5
+{
+    transform: translate(96px, 0px) rotate(90deg);
+}
+#line6
+{
+    transform: translate(-96px, 0px) rotate(90deg);
+}
+#line7
+{
+    transform: translate(0px, 0px) rotate(45deg);
+}
+#line8
+{
+    transform: translate(0px, 0px) rotate(-45deg);
+}
+#notAiScore, #aiScore
+{
+    width: 350px;
+    justify-content: space-around;
+}
